@@ -75,7 +75,7 @@ and the [elementname]#https://vaadin.com/elements/-/element/vaadin-combo-box[vaa
 
 [subs="normal"]
 ----
-[prompt]#$# [command]#bower# install --save [replaceable]#paper-elements vaadin-combo-box#
+[prompt]#$# [command]#bower# install --save [replaceable]#paper-elements vaadin-combo-box iron-flex-layout#
 ----
 
 [TIP]
@@ -92,17 +92,51 @@ Next we will modify the application index HTML file to load the web components p
 Open the [filename]#src/index.html# file and append the following lines to the [elementname]#head# section:
 
 [source,html]
-.src/index.html head additions
+.src/elements.html
 ----
-<head>
-  ...
+<link rel="import" href="assets/bower_components/polymer/polymer.html">
+<link rel="import" href="assets/bower_components/paper-styles/color.html">
+<link rel="import" href="assets/bower_components/paper-styles/typography.html">
+<link rel="import" href="assets/bower_components/paper-styles/shadow.html">
+<link rel="import" href="assets/bower_components/paper-input/paper-input.html">
+<link rel="import" href="assets/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="app-theme.html">
+----
 
-  <script src="assets/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-  <link rel="import" href="assets/bower_components/paper-styles/color.html">
-  <link rel="import" href="assets/bower_components/paper-styles/typography.html">
-  <link rel="import" href="assets/bower_components/vaadin-combo-box/vaadin-combo-box.html">
-  <link rel="import" href="assets/bower_components/paper-input/paper-input.html">
-</head>
+[source,html]
+.src/app-theme.html
+----
+<link rel="import" href="assets/bower_components/polymer/polymer.html">
+<link rel="import" href="assets/bower_components/paper-styles/color.html">
+
+<!-- This has to be in this location for Vulcanize to build a valid bundle! -->
+<style is="custom-style" include="iron-flex iron-flex-alignment iron-flex-factors iron-positioning"></style>
+<!-- Taken from https://material.google.com/style/color.html -->
+<style is="custom-style">
+  :root {
+    /*
+     * You can use these generic variables in your elements for easy theming.
+     * For example, if all your elements use `--primary-text-color` as its main
+     * color, then switching from a light to a dark theme is just a matter of
+     * changing the value of `--primary-text-color` in your application.
+     */
+    --primary-text-color: var(--light-theme-text-color);
+    --primary-background-color: var(--light-theme-background-color);
+    --secondary-text-color: var(--light-theme-secondary-color);
+    --disabled-text-color: var(--light-theme-disabled-color);
+    --divider-color: var(--light-theme-divider-color);
+    --error-color: var(--paper-deep-orange-a700);
+
+    /*
+     * Primary and accent colors. Also see color.html for more colors.
+     */
+    --primary-color: var(--paper-blue-500);
+    --light-primary-color: var(--paper-blue-100);
+    --dark-primary-color: var(--paper-blue-700);
+
+    --accent-color: var(--paper-red-a200);
+    --light-accent-color: var(--paper-red-a100);
+    --dark-accent-color: var(--paper-red-a400);
 ----
 
 In Angular CLI Webpack projects, the main application file is automatically bundled and appended to the end of the [elementname]#body# section of the [filename]#index.html# file.
