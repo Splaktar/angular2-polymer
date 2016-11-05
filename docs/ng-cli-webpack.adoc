@@ -94,11 +94,11 @@ Open the [filename]#src/index.html# file and append the following lines to the [
 [source,json]
 .package.json
 ----
-  "scripts": {
-    "build": "vulcanize; ng build",
-    "build-prod": "vulcanize; ng build -prod",
-    "vulcanize": "vulcanize -o src/elements.vulcanized.html src/elements.html --strip-comments --inline-scripts --inline-css"
-  }
+"scripts": {
+  "build": "vulcanize; ng build",
+  "build-prod": "vulcanize; ng build -prod",
+  "vulcanize": "vulcanize -o src/elements.vulcanized.html src/elements.html --strip-comments --inline-scripts --inline-css"
+}
 ----
 
 [source,html]
