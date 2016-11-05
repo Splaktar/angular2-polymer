@@ -158,9 +158,7 @@ The [filename]#webcomponents.js# polyfill is not necessary for browsers that ful
         "manifest.webapp"
       ],
       "scripts": [
-        "../node_modules/webcomponents.js/webcomponents-lite.js",
-        "../node_modules/hammerjs/hammer.js",
-        "../node_modules/firebase/firebase.js"
+        "../node_modules/webcomponents.js/webcomponents-lite.js"
       ],
     }
   ],
