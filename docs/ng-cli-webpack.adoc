@@ -111,15 +111,9 @@ Open the [filename]#src/index.html# file and append the following lines to the [
 
 <!-- This has to be in this location for Vulcanize to build a valid bundle! -->
 <style is="custom-style" include="iron-flex iron-flex-alignment iron-flex-factors iron-positioning"></style>
-<!-- Taken from https://material.google.com/style/color.html -->
+
 <style is="custom-style">
   :root {
-    /*
-     * You can use these generic variables in your elements for easy theming.
-     * For example, if all your elements use `--primary-text-color` as its main
-     * color, then switching from a light to a dark theme is just a matter of
-     * changing the value of `--primary-text-color` in your application.
-     */
     --primary-text-color: var(--light-theme-text-color);
     --primary-background-color: var(--light-theme-background-color);
     --secondary-text-color: var(--light-theme-secondary-color);
@@ -127,9 +121,7 @@ Open the [filename]#src/index.html# file and append the following lines to the [
     --divider-color: var(--light-theme-divider-color);
     --error-color: var(--paper-deep-orange-a700);
 
-    /*
-     * Primary and accent colors. Also see color.html for more colors.
-     */
+    /* Primary and accent colors. Also see color.html for more colors. */
     --primary-color: var(--paper-blue-500);
     --light-primary-color: var(--paper-blue-100);
     --dark-primary-color: var(--paper-blue-700);
