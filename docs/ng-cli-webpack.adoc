@@ -91,6 +91,16 @@ src/assets/bower_components
 Next we will modify the application index HTML file to load the web components polyfill, and to import the Polymer elements.
 Open the [filename]#src/index.html# file and append the following lines to the [elementname]#head# section:
 
+[source,json]
+.package.json
+----
+  "scripts": {
+    "build": "vulcanize; ng build",
+    "build-prod": "vulcanize; ng build -prod",
+    "vulcanize": "vulcanize -o src/elements.vulcanized.html src/elements.html --strip-comments --inline-scripts --inline-css"
+  }
+----
+
 [source,html]
 .src/elements.html
 ----
